@@ -7,4 +7,12 @@
     <%= link_to list.title, list_path(list.id) %>
   </span>
   
+  <p>画像</p>
+  <!-- attached?は、画像が存在していればtrue、存在していなければfalseを返します -->
+  <% if list.image.attached? %>
+    <%= image_tag list.image, size: "200x200" %>
+  <% else %>
+    <%= image_tag 'no_image', size: "200x200" %>
+  <% end %>
+  
 <% end %>
